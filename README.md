@@ -1,198 +1,194 @@
-# AI-Based Cybersecurity Simulation Using Multi-Agent Reinforcement Learning (MARL)
+# 🛡️ CYBERNEXUS: Next-Gen AI Cybersecurity Simulation
 
-![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
-![React](https://img.shields.io/badge/React-18-61DAFB)
-![FastAPI](https://img.shields.io/badge/FastAPI-0.68%2B-009688)
-![PyTorch](https://img.shields.io/badge/PyTorch-1.9%2B-EE4C2C)
-![License](https://img.shields.io/badge/License-MIT-green)
+![License](https://img.shields.io/badge/license-MIT-blue.svg) ![React](https://img.shields.io/badge/frontend-React-61DAFB.svg) ![FastAPI](https://img.shields.io/badge/backend-FastAPI-009688.svg) ![AI](https://img.shields.io/badge/AI-Multi--Agent_RL-purple.svg)
 
-## 📋 Table of Contents
-- [Abstract](#abstract)
-- [Problem Statement](#problem-statement)
-- [Objectives](#objectives)
-- [Methodology](#methodology)
-- [Architecture](#architecture)
-- [Project Structure](#project-structure)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Evaluation Metrics](#evaluation-metrics)
-- [Results](#results)
-- [Screenshots](#screenshots)
-- [Future Work](#future-work)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
+> **Experience the future of autonomous cyber defense.**  
+> CyberNexus is an advanced simulation platform that uses Multi-Agent Reinforcement Learning (MARL) to simulate real-time cyber warfare. Watch autonomous Red Team (Attacker) and Blue Team (Defender) agents battle in a packet-level simulation, or take command yourself in the tactical CISO Mode.
 
 ---
 
-## 📝 Abstract
-This project presents an advanced **AI-based cybersecurity simulation framework** utilizing **Multi-Agent Reinforcement Learning (MARL)**. It models high-fidelity interactions between **Attacker Agents (Red Team)** and **Defender Agents (Blue Team)** within a simulated enterprise network environment. The system enables the evaluation of adaptive defense strategies against dynamic cyber threats, providing a platform for research into autonomous cyber defense mechanisms.
+## 📸 Interface Preview
 
-## ❓ Problem Statement
-Traditional rule-based intrusion detection and prevention systems (IDPS) are often reactive and struggle to adapt to novel, sophisticated cyber attacks. Static defense policies fail to account for the dynamic nature of adversary behavior. There is a critical need for **adaptive, autonomous defense systems** capable of learning from interactions and proactively mitigating threats in real-time.
+### **Command Center (Home)**
+The central hub for accessing all simulation modules.
+![Home Page](assets/home_screenshot.png)
 
-## 🎯 Objectives
-- **Develop a Cyber Simulation Environment**: Create a realistic network environment capturing nodes, vulnerabilities, and traffic flow.
-- **Implement MARL Agents**: Train autonomous Attacker and Defender agents using Deep Q-Networks (DQN) strategies.
-- **Simulate Advanced Scenarios**: Model complex attack vectors including insider threats and multi-stage kill chains.
-- **Visualize Interactions**: Provide a real-time React-based dashboard to visualize agent actions, network state, and attack propagation.
+### **Real-Time Simulation**
+Live packet warfare visualization between localized neural agents.
+![Simulation](assets/simulation_screenshot.png)
 
-## 🔬 Methodology
+### **Scenario Selection & Briefing**
+Choose from 20+ diverse attack scenarios to simulate.
+![Scenarios](assets/scenario_selection.png)
 
-### Reinforcement Learning Framework
-The simulation is modeled as a Markov Game where agents interact with the environment:
-- **State Space**: Network topology, node compromise status, traffic logs, and vulnerability states.
-- **Action Space**:
-    - *Attacker*: Scan, Exploit, Privilege Escalation, Lateral Movement, Data Exfiltration.
-    - *Defender*: Monitor, Isolate Node, Patch Vulnerability, Block IP, Deceive (Honeypot).
-- **Reward Function**:
-    - *Attacker*: Positive reward for compromising nodes and exfiltrating data.
-    - *Defender*: Positive reward for maintaining service availability and detecting intrusions; negative reward for false positives or downtime.
+### **Tactical CISO War Room**
+Executive decision-making interface for high-stakes scenarios.
+![CISO Mode](assets/ciso_screenshot.png)
 
-### Agents
-1. **Attacker Agent (Red)**: Learns to find optimal paths to critical assets.
-2. **Defender Agent (Blue)**: Learns to minimize system impact and neutralize threats.
-3. **Insider Threat Agent**: Simulates compromised internal accounts with legitimate access.
-4. **SOC Agent**: High-level orchestrator for Security Operations Center decision making.
+### **Analytics Dashboard**
+Comprehensive metrics and live log analysis.
+![Dashboard](assets/dashboard_screenshot.png)
 
-## 🏗️ Architecture
-The system consists of a Python-based backend handling the simulation logic and ML training, coupled with a React frontend for visualization.
+---
 
-![Architecture Diagram](https://via.placeholder.com/800x400?text=System+Architecture+Diagram)
-*(Placeholder: Insert your high-level architecture diagram here showing the interaction between the Gym Environment, MARL Agents, API Layer, and React UI)*
+## � Key Features
+
+### 1. **Autonomous Simulation**
+*   **Packet-Level Warfare**: Visualizes network traffic, exploits, and defense mechanisms in real-time.
+*   **Multi-Agent System**:
+    *   🔴 **Red Team**: Uses RL to find vulnerabilities and launch exploits (DDoS, SQLi, Phishing).
+    *   🟢 **Blue Team**: Autonomously patches systems and blocks IPs.
+    *   🟡 **Insider Threat**: Simulates compromised internal credentials.
+    *   🔵 **SOC Agent**: Orchestrates high-level defense strategies.
+*   **Voice Narration**: Real-time TTS commentary of the battle (optional).
+
+### 2. **Tactical CISO Mode**
+*   **Roleplay Experience**: Step into the shoes of a Chief Information Security Officer.
+*   **Decision Scenarios**: Face 20+ complex security incidents (Ransomware, Data Leaks, APTs).
+*   **Immediate Feedback**: Receive instant grading (Green/Red) on your strategic choices.
+
+### 3. **Deep Analytics & Reporting**
+*   **Mission Dashboard**: Track total scenarios, active agents, and uptime metrics.
+*   **Live Log Engine**: Visualize attack vectors and severity distribution in real-time.
+*   **PDF Reports**: Generate detailed after-action reports (AAR) for training analysis.
+
+### 4. **Educational Tools**
+*   **Flashcards**: Interactive learning modules for cybersecurity terminology.
+*   **Architecture Theory**: Visual diagrams explaining the React-FastAPI-RL pipeline.
+
+
+---
+
+## 🏗️ System Architecture
+
+![System Architecture](assets/system_architecture.png)
+
+The CyberNexus platform follows a modern separated frontend/backend architecture:
+
+1.  **Frontend (React UI)**: Users interact with the **Home** portal, command the **CISO Mode** strategy, and view real-time data on the **Dashboard** and **Analytics** panels.
+2.  **Backend (FastAPI)**: Serves as the central controller, handling REST API requests for simulation state and maintaining WebSocket connections for real-time packet visualization.
+3.  **Simulation Core (AI Engine)**: The heart of the system where **Red Agents** (Attackers) and **Blue Agents** (Defenders) interact within defined **Scenarios**.
+4.  **Peripheral Services**:
+    *   **Voice Engine**: Generates TTS commentary based on simulation events.
+    *   **Data Storage**: Logs historical match data and analytics logs.
+
+---
+
+## 🛠️ Tech Stack
+
+### **Frontend**
+*   **Framework**: React 19 (Create React App)
+*   **Styling**: Vanilla CSS (Cyberpunk/Glassmorphism Theme)
+*   **Visualization**: Chart.js, Konva (Canvas), Framer Motion
+*   **Icons**: Lucide React
+
+### **Backend**
+*   **API**: FastAPI (Python)
+*   **AI/ML**: PyTorch, OpenAI Gym (Reinforcement Learning)
+*   **Simulation**: NumPy, Pandas
+*   **Voice**: Pyttsx3 (Text-to-Speech)
+
+---
+
+## 🚀 Installation & Setup
+
+### **Prerequisites**
+*   Node.js (v16+)
+*   Python (v3.9+)
+*   Git
+
+### **1. Clone the Repository**
+```bash
+git clone https://github.com/shreyar29/AI-Based-Cybersecurity-Simulation-Using-MARL.git
+cd AI-Based-Cybersecurity-Simulation-Using-MARL
+```
+
+### **2. Backend Setup**
+```bash
+cd backend
+# Create virtual environment (optional but recommended)
+python -m venv venv
+# Windows:
+venv\Scripts\activate
+# Mac/Linux:
+source venv/bin/activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run the API Server
+uvicorn main:app --reload
+```
+*Backend will start at `http://localhost:8000`*
+
+### **3. Frontend Setup**
+```bash
+# Open a new terminal
+cd cyber-sim-ui
+
+# Install dependencies
+npm install
+
+# Start the User Interface
+npm start
+```
+*Frontend will launch at `http://localhost:3000`*
+
+---
 
 ## 📂 Project Structure
 
-```bash
-ai_cybersecurity_simulation/
-├── backend/                  # Python Backend & Simulation Logic
-│   ├── agents/               # RL Agent implementations (Attacker, Defender, etc.)
-│   ├── api/                  # FastAPI routes and WebSocket handlers
-│   ├── env/                  # Custom Gym Environment for Cyber Network
-│   ├── marl/                 # Deep Learning models (DQN) and Replay Buffers
-│   ├── scenarios/            # Attack scenario definitions
-│   ├── simulation/           # Simulation orchestration and visualizers
-│   ├── utils/                # Helper functions (logging, config)
-│   ├── main.py               # Main API entry point
-│   ├── train.py              # Training script for RL agents
-│   └── requirements.txt      # Python dependencies
+```
+├── backend/
+│   ├── agents/          # RL Agent definitions (Red/Blue/Insider)
+│   ├── marl/            # Multi-Agent Reinforcement Learning logic
+│   ├── scenarios/       # Attack scenario definitions (JSON/Py)
+│   ├── main.py          # FastAPI Entry Point
+│   └── requirements.txt # Python dependencies
 │
-├── cyber-sim-ui/             # React Frontend Dashboard
-│   ├── public/               # Static assets
-│   ├── src/                  # React components, stores, and views
-│   ├── package.json          # Node dependencies
-│   └── requirements.txt      # (Reference) Frontend library list
+├── cyber-sim-ui/
+│   ├── public/          # Static assets
+│   ├── src/
+│   │   ├── components/  # Reusable UI widgets
+│   │   ├── pages/       # Applications modules (Home, Sim, CISO, Dashboard)
+│   │   ├── styles/      # CSS Design System
+│   │   └── App.js       # Main Routing Logic
+│   └── package.json     # Node dependencies
 │
-└── README.md                 # Project Documentation
+└── assets/              # Screenshots and documentation media
 ```
-
-## ⚙️ Installation
-
-### Prerequisites
-- **Python** 3.8 or higher
-- **Node.js** 14.0 or higher
-- **npm** or **yarn**
-
-### 1. Backend Setup
-Navigate to the backend directory and install Python dependencies.
-
-```bash
-cd backend
-python -m venv venv
-# Windows
-.\venv\Scripts\activate
-# Linux/Mac
-source venv/bin/activate
-
-pip install -r requirements.txt
-```
-*(Note: If using Windows and `pyttsx3`, ensure `pypiwin32` is installed if errors occur.)*
-
-### 2. Frontend Setup
-Navigate to the frontend directory and install Node modules.
-
-```bash
-cd cyber-sim-ui
-npm install
-```
-
-## 🚀 Usage
-
-### Running the Backend
-Start the FastAPI server (which hosts the WebSocket endpoint for simulation data).
-```bash
-# In /backend directory (with venv activated)
-uvicorn main:app --reload
-```
-The API will run at `http://localhost:8000`.
-
-### Running the Simulation / Training
-To train the agents or run a headless simulation:
-```bash
-# In /backend directory
-python train.py
-```
-
-### Running the Frontend
-Start the React development server to view the dashboard.
-```bash
-# In /cyber-sim-ui directory
-npm start
-```
-Open `http://localhost:3000` in your browser. The UI should connect to the backend WebSocket automatically.
-
-## 🔧 Configuration (.env)
-Create a `.env` file in the `backend/` directory for custom configurations (optional).
-
-```ini
-# .env.example
-ENV_TYPE=production
-DEBUG=False
-DB_URL=sqlite:///./cyber_sim.db
-SECRET_KEY=your_secret_key_here
-```
-
-## 📊 Evaluation Metrics
-The system performance is evaluated using:
-- **Time to Compromise (TTC)**: Time taken by the attacker to reach the target.
-- **Time to Detect (TTD)**: Speed of the defender in identifying the breach.
-- **System Availability**: Percentage of uptime for critical services.
-- **Reward Accumulation**: Convergence of agent policies over episodes.
-
-## 📈 Results
-*(Template: Add charts or graphs showing training loss and reward curves over time.)*
-- **Training Convergence**: [Insert Graph]
-- **Win/Loss Ratio**: [Insert Graph]
-
-## 📸 Screenshots
-*(Template: Add screenshots of the simulation dashboard.)*
-
-| Dashboard Overview | Attack Path Visualization |
-|:------------------:|:-------------------------:|
-| ![Dashboard](https://via.placeholder.com/400x200?text=Dashboard) | ![AttackGraph](https://via.placeholder.com/400x200?text=Attack+Graph) |
-
-## 🔮 Future Work
-- Integrate Graph Neural Networks (GNN) for better topology learning.
-- Add support for real-time CVE database integration.
-- Deploy reinforcement learning agents in a containerized emulation environment (e.g., Mininet, Docker).
-
-## 🤝 Contributing
-Contributions are welcome! Please follow these steps:
-1. Fork the repository.
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`).
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`).
-4. Push to the branch (`git push origin feature/AmazingFeature`).
-5. Open a Pull Request.
-
-## 🛠️ Troubleshooting
-- **WebSocket Connection Failed**: Ensure the backend is running on port 8000 and the frontend is pointing to the correct URL.
-- **ModuleNotFoundError**: Run `pip install -r requirements.txt` again to check for missing packages.
-
-## 📜 License
-Distributed under the MIT License. See `LICENSE` for more information.
-
-## 👤 Author
-**SHREYA R**  
 
 ---
-*Built for the Advancement of AI in Cybersecurity*
+
+## 🎮 Usage Guide
+
+1.  **Start the Simulation**:
+    *   Navigate to the **Simulation** page.
+    *   Click `Start Simulation`.
+    *   Watch the agents interact on the canvas. Use "Voice Mode" to hear the commentary.
+
+2.  **Play CISO Mode**:
+    *   Go to **CISO Mode**.
+    *   Read the scenario prompt (e.g., "Ransomware detected on HR Server").
+    *   Select the best response from the 4 options.
+    *   Get instant feedback on your decision.
+
+3.  **Analyze Results**:
+    *   Visit the **Dashboard** to see global stats.
+    *   Check **Analytics** for detailed log breakdowns.
+
+---
+
+## 🔮 Future Enhancements
+*   **Multiplayer Red vs. Blue**: Allow human players to control agents in real-time.
+*   **LLM Integration**: Use Large Language Models for dynamic scenario generation.
+*   **Cloud Deployment**: Dockerize the application for AWS/Azure hosting.
+*   **Mobile App**: React Native version for on-the-go training.
+
+---
+
+## 👥 Contributors
+*   **Concept & Development**: Shreya R
+
+---
+*Built with ❤️ for the Cyber Defense Community.*
