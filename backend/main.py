@@ -11,6 +11,13 @@ app.add_middleware(
     allow_headers=["*"]
 )
 
+@app.get("/")
+async def root():
+    return {"message": "AI Cybersecurity Simulation API is running"}
+
 @app.websocket("/ws/simulate/{scenario_id}")
 async def simulate(ws: WebSocket, scenario_id: int):
     await run_simulation(ws, scenario_id)
+
+from api.interactive_ws import router as interactive_router
+app.include_router(interactive_router)
