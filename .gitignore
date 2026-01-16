@@ -1,0 +1,20 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# Node
+node_modules/
+.cache/
+
+# Env
+.env
+
+# Outputs / media
+backend/outputs/
+*.wav
+*.mp4
+
+# Build
+dist/
+build/
