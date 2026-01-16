@@ -4,3 +4,8 @@ torch
 matplotlib
 pandas
 tqdm
+fastapi
+uvicorn
+pyttsx3
+opencv-python
+moviepy
