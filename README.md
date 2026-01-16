@@ -70,7 +70,6 @@ The CyberNexus platform follows a modern separated frontend/backend architecture
 3.  **Simulation Core (AI Engine)**: The heart of the system where **Red Agents** (Attackers) and **Blue Agents** (Defenders) interact within defined **Scenarios**.
 4.  **Peripheral Services**:
     *   **Voice Engine**: Generates TTS commentary based on simulation events.
-    *   **Data Storage**: Logs historical match data and analytics logs.
 
 ---
 
